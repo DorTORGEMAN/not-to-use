@@ -1,25 +1,25 @@
 package PageObject;
-
-
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class BasePage {
     public static WebDriver driver;
-
+    public static WebDriverWait wait;
     public BasePage() {
     }
 
-
+    //------Methods-----//
     public static void Browser(String Browser) {
         switch (Browser) {
             case "firefox": {
@@ -40,19 +40,23 @@ public class BasePage {
     }
 
     public static void Click(By by) {
-        WebElement SomeElement = driver.findElement(by);
+        wait = new WebDriverWait(driver,Duration.ofSeconds(70));
+        WebElement SomeElement = wait.until(ExpectedConditions.elementToBeClickable(by));
         SomeElement.click();
     }
 
-    public static void SendKEY(By by, String Text) {
+    public static void SendKEY(By by,String Text) {
         WebElement SomeElement = driver.findElement(by);
         SomeElement.sendKeys(Text);
     }
-
-    public void SelectInList(By by, String text) {
+    public static void ClearText(By by){
+        WebElement CLEARtext=driver.findElement(by);
+        CLEARtext.clear();
+    }
+    public static void SelectInList(By by, String text) {
         WebElement SelectedComboList = driver.findElement(by);
         Select Selectcombo = new Select(SelectedComboList);
-        Selectcombo.selectByValue(text);
+        Selectcombo.selectByVisibleText(text);
     }
 
     public static void SelectCheckBox(By by) {
@@ -64,6 +68,15 @@ public class BasePage {
     public void WaitSec20() throws InterruptedException {
         Thread.sleep(Duration.ofSeconds(20));
     }
+    public static String takeScreenShot(String ImagePath){
+        TakesScreenshot takesScreenshot=(TakesScreenshot) driver;
+        File screenShotFile=takesScreenshot.getScreenshotAs(OutputType.FILE);
+        File destinationFile=new File(ImagePath+ ".png");
+        try {
+            FileUtils.copyFile(screenShotFile,destinationFile);
 
+        } catch (IOException e) {System.out.println(e.getMessage());
+        }return ImagePath+" .png";
+    }
 }
 

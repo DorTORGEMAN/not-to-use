@@ -2,10 +2,12 @@
 <config>
 <firstname>dor</firstname>
 <lastname>torgeman</lastname>
-<email>dortorgeman10@gmail.com</email>
+<email>test04@Test.com</email>
+<email2>test05@Test.com</email2>
+<emailFriend>emailFriend@Test.com</emailFriend>
 <password>191295Dor</password>
 <password2>191295Dor</password2>
-<city>sderot </city>
+<city>sderot</city>
 <country>israel</country>
-<phone>0542060971</phone>
+<phonedemo>0515111111</phonedemo>
 </config>
