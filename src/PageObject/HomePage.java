@@ -22,24 +22,24 @@ public class HomePage extends BasePage {
         Click(HomeSelectPrice);
         switch (price){////select not work some reason So I think maybe switch work
             case "ils99":{
-                Thread.sleep(12);
+                Thread.sleep(25);
                 Click(By.cssSelector("li[value='1'][uaindex='1']"));
             }break;
             case "ils200-299":{
-                Thread.sleep(12);
+                Thread.sleep(25);
                 Click(By.cssSelector("li[value='3'][uaindex='3']"));
             }break;
             case "ils100-199":{Thread.sleep(12);
                 Click(By.cssSelector("li[value='2'][uaindex='2']"));
             }break;
             case "ils300-399":{
-                Thread.sleep(12);
+                Thread.sleep(25);
                 Click(By.cssSelector("li[value='4'][uaindex='4']"));}break;
             case "ils500-750":{
-                Thread.sleep(12);
+                Thread.sleep(25);
                 Click(By.cssSelector("li[value='5'][uaindex='5']"));}break;
             case "ils750Up":{
-                Thread.sleep(12);
+                Thread.sleep(25);
                 Click(By.cssSelector("li[value='6'][uaindex='6']"));}break;
         }return null;
     }

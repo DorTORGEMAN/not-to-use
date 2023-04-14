@@ -10,7 +10,7 @@ import static PageObject.BasePage.driver;
 
 public class TestBase {
 protected static ExtentReports extent;
-protected static ExtentTest MyTests;
+public static ExtentTest MyTests;
 protected static String reportFilePath="C:/Users/power play/IdeaProjects/Final_Ex_AutomationCorse/extent-report.html";
     @BeforeClass
     public static void SetUp() throws Exception {

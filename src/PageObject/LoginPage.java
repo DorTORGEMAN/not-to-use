@@ -4,11 +4,11 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 //------Web Elements-----//
 public class LoginPage extends BasePage {
-    public static By EmailLogin = By.cssSelector("input[placeholder='מייל']");
-    public static By PasswordLogin = By.cssSelector("input[type='password']");
-    public static By CloseLogin = By.cssSelector("span[alt='סגירה'][title='סגירה']");
-    public static By LoginToUSER = By.cssSelector("button[type='submit'][gtm='כניסה ל-BUYME']");
-    public static By RegisterLogin = By.cssSelector("span[class='text-link theme']");
+    public static By EmailLogin=By.cssSelector("input[placeholder='מייל']");
+    public static By PasswordLogin=By.cssSelector("input[type='password']");
+    public static By CloseLogin=By.cssSelector("span[alt='סגירה'][title='סגירה']");
+    public static By LoginToUSER=By.cssSelector("button[type='submit'][gtm='כניסה ל-BUYME']");
+    public static By RegisterLogin=By.cssSelector("span[class='text-link theme']");
     public static By MassageNullPasswordLogin=By.cssSelector("input[placeholder='סיסמה']+.parsley-errors-list");//if you put input something invalid you get some red error massage and elemant get tag ul .parsley-errors-list
     public static By MassageNullEmailLogin=By.cssSelector("input[placeholder='מייל']+.parsley-errors-list");//if you put input something invalid you get some red error massage and elemant get tag ul .parsley-errors-list
 //------Methods-----//
