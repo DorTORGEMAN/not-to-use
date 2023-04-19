@@ -71,14 +71,10 @@ public class HomePage extends BasePage {
     public static HomePage PickCategory(String PickCategory) throws InterruptedException {
         Click(HomeSelectCategory);
         switch (PickCategory) {
-            case "Holiday": {
-                Thread.sleep(12);
-                Click(By.cssSelector("li[value='393'][uaindex='2']"));
-            }
-            break;
+
             case "giftCard restaurant chef": {
                 Thread.sleep(12);
-                Click(By.cssSelector("li[value='16'][uaindex='5']"));
+                Click(By.cssSelector("li[value='16'][uaindex='4']"));
             }break;
             case "hotels":{
                 Thread.sleep(12);

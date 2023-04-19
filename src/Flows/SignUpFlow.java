@@ -4,7 +4,6 @@ public class SignUpFlow {
     public static SignUpFlow SignUpFlow(String FristName,String Email,String Password,String Password2) throws Exception {
         if (FristName == null) {
             SignUpPage.SetUp_First_name();
-
         }
         if (Email == null) {
             SignUpPage.SetUp_Email();
@@ -15,7 +14,6 @@ public class SignUpFlow {
         if (Password2 == null) {
             SignUpPage.SetUp_Password2();
         }
-
     return new SignUpFlow();}
     }
 

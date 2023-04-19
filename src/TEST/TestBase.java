@@ -3,6 +3,8 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import static PageObject.BasePage.Browser;
 import static PageObject.BasePage.driver;
@@ -25,10 +27,10 @@ protected static String reportFilePath="C:/Users/power play/IdeaProjects/Final_E
     }
 
     @AfterClass
-    public static void FinishTest(){
+    public static void FinishTest() throws InterruptedException {
         extent.endTest(MyTests);
         extent.flush();
-
-
+        Thread.sleep(Duration.ofMinutes(1));
+        driver.quit();
     }
 }

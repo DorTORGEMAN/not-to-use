@@ -6,10 +6,10 @@ import org.openqa.selenium.By;
 //------Web Elements-----//
 public class SignUpPage extends BasePage {
     public static By SignUPFirstName = By.cssSelector("input[placeholder='שם פרטי']");
-    protected static By SignUp_Email = By.cssSelector("input[tuaandiinputdiscrp='* מייל']");
-    protected static By SignUpPassWORD = By.cssSelector("input[tuaandiinputdiscrp='* סיסמה']");
-    protected static By SignUpPassWordSecond = By.cssSelector("input[tuaandiinputdiscrp='אימות סיסמה'][data-parsley-equalto-message='הסיסמאות לא זהות, אולי זה מהתרגשות :)']");
-    protected static By SignUpAgreeBox = By.cssSelector("div[aria-labelledby='אני מסכימ/ה למדיניות הפרטיות ולתנאי השימוש ב-BUYME שתאסוף עלי מידע לצורך תפעול שוברי המתנה.']");
+    protected static By SignUp_Email = By.cssSelector("input[placeholder='מייל']");
+    protected static By SignUpPassWORD = By.cssSelector("input[placeholder='סיסמה']");
+    protected static By SignUpPassWordSecond = By.cssSelector("input[placeholder='אימות סיסמה'][data-parsley-equalto-message='הסיסמאות לא זהות, אולי זה מהתרגשות :)']");
+    protected static By SignUpAgreeBox = By.cssSelector("div[class='login-options grid register-text']");
 
     static By SignUpNewUser = By.cssSelector("button[type='submit'][gtm='הרשמה ל-BUYME']");
 
@@ -18,10 +18,10 @@ public class SignUpPage extends BasePage {
         super();
     }
 
-    public static String SetUp_First_name() throws Exception {
+    public static SignUpPage SetUp_First_name() throws Exception {
         final String FIRST_NAME = Data.UserData.UserFromFile("firstname");
         SendKEY(SignUPFirstName,FIRST_NAME);
-        return FIRST_NAME;
+        return new SignUpPage();
     }
 
     public static SignUpPage SetUp_Email() throws Exception {

@@ -28,7 +28,5 @@ public class TestSignUp extends TestBase{
                 .SignUp_ClickOnAgreeBOX()
                  .ClickOnCreateUser();
         MyTests.log(LogStatus.PASS, "Test is successful");
-        takeScreenShot("C:/Users/power play/IdeaProjects/Final_Ex_AutomationCorse/TestScreenShots/Test01 Register to Buyme",true);
-
-    }
+        takeScreenShot("C:/Users/power play/IdeaProjects/Final_Ex_AutomationCorse/TestScreenShots/Test01 Register to Buyme",true);}
 }

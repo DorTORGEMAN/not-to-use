@@ -5,6 +5,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -72,5 +73,10 @@ public class BasePage {
         }catch (ExceptionInInitializerError | IOException e) {
             System.out.println(e.getMessage());
         }return ImagePath+".png";}
+
+    public static void ClickLikeHuman(By by){
+        WebElement elementToClick = driver.findElement(by);
+        new Actions(driver).moveToElement(elementToClick).click().perform();
+    }
 }
 

@@ -23,8 +23,7 @@ public class TestExtra extends TestBase{
         WebElement spinner=driver.findElement(By.cssSelector(".spinner > div"));
         int height=spinner.getSize().getHeight();
         int width=spinner.getSize().getWidth();
-        System.out.println("Height:"+height);
-        System.out.println("Width:"+width);
+        System.out.println("Height of dot:"+height+"Width OF dot:"+width);
         MyTests.log(LogStatus.PASS, "Test is successful");
         takeScreenShot("C:/Users/power play/IdeaProjects/Final_Ex_AutomationCorse/TestScreenShots/test00 Loading dot EXTRA",true);}
 
@@ -49,9 +48,10 @@ public class TestExtra extends TestBase{
         MyTests = extent.startTest(" test02 Extra");
         MyTests.log(LogStatus.INFO, "Test started", "Details:test02");
         PageFactory.initElements(driver, this);////find all element in website
-        NameWhoGetAgift("Marsel").
-                WhatHisAEvent("HappyBirthDay").
-                NameWhoGetAgift("Marsel").
+        NameWhoGetAgift("Marsel");
+        driver.navigate().refresh();
+                WhatHisAEvent("HappyBirthDay");
+                NameWhoGetAgift("Marsel");
                 BlessingText("מזל טוב 140 שיהיה מלא אושר ובריאות");
         String WhoGet = driver.findElement(Gift_NameWhoGet).getAttribute("Value");
         String Blessing = driver.findElement(Gift_BlessingText).getAttribute("Value");
@@ -62,6 +62,6 @@ public class TestExtra extends TestBase{
         MyTests.log(LogStatus.PASS, "Test is successful");
         takeScreenShot("C:/Users/power play/IdeaProjects/Final_Ex_AutomationCorse/TestScreenShots/test02",true);}
 
-    protected static String reportFilePath = "C:/Users/power play/IdeaProjects/Final_Ex_AutomationCorse/extent-report.html";
+
 }
 
